@@ -1,4 +1,6 @@
-
+body{
+    background-color: #fccde7;
+}
 .box-area{
     width: 930px;
 }
@@ -7,7 +9,7 @@
     color: #fff;
 }
 .btn-pink:hover {
-    background-color: #fab1dc;
+    background-color: #ec9ac7;
     color: #fff;
 }
 .caixa-direita {
