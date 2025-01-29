@@ -53,11 +53,22 @@
       <input type="text" id="inputAddress" class="form-control"  th:field="*{endereco}" placeholder="Digite Seu Endereço" required>
     </div>
 
-    <!-- OUTRO ENDEREÇO -->
+    <!-- CPF -->
     <div class="mb-3">
-      <label for="inputAddress2" class="form-label fw-semibold">OUTRO ENDEREÇO (OPCIONAL):</label>
-      <input type="text" id="inputAddress2" class="form-control"  th:field="*{outroEndereco}" placeholder="Digite Seu Endereço" >
+      <label for="inputCpf" class="form-label fw-semibold">CPF:</label>
+      <input type="text" id="inputCpf" class="form-control" th:field="*{cpf}" placeholder="Digite seu CPF" maxlength="14" oninput="mascaraCPF(this)" >
     </div>
+    
+    <script>
+      function mascaraCPF(campo) {
+        var cpf = campo.value.replace(/\D/g, ''); // remove tudo o que não for número
+        cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2'); // coloca o primeiro ponto
+        cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2'); // coloca o segundo ponto
+        cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); // coloca o traço
+        campo.value = cpf;
+      }
+    </script>
+    
 
  <!-- TELEFONE -->
 <div class="row mb-3">
