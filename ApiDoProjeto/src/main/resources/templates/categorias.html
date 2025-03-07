@@ -33,7 +33,7 @@
               </li>
                 <a class="nav-link fw-semibold" aria-current="page"  href="login.html" th:href="@{/login}">Login</a>
                 <a class="nav-link fw-semibold" aria-current="page"  href="ajuda.html" th:href="@{/lista_ajuda}">Contato</a>
-              </li>        
+              </li>
             </ul>
             
           </div>
@@ -61,17 +61,13 @@
             <h2>Menu</h2>
 
             <!-- Pesquisa -->
-            <div class="pesquisa">
-                <label for="pesquisa">Pesquisa:</label>
-                <input type="text" id="pesquisa" placeholder="Digite para pesquisar...">
-            </div>
-
             <div class="d-flex" role="search">
-              <input class="form-control me-2 rounded-4" type="search" placeholder="Procure no site" aria-label="Search" th:href="@{/paginaProduto}" >
+              <input class="form-control me-1 rounded-4" id="pesquisa" type="search" placeholder="Procure no site" aria-label="Search" th:href="@{/paginaProduto}" >
               <button class="btn btn-pink rounded-4" type="submit">Buscar</button>
             </div>
             <!-- Opções de sabores -->
             <div class="opcoes">
+                <div id="todos" class="opcao rounded-4"> Todos</div>
                 <div id="bolo" class="opcao rounded-4">Bolo</div>
                 <div id="donuts" class="opcao rounded-4">Donuts</div>
                 <div id="cupcake" class="opcao rounded-4">Bolo de pote</div>
@@ -95,28 +91,28 @@
         // Dados dos produtos
         const produtos = {
             bolo: [
-                { nome: "Bolo de Chocolate", descricao: "Bolo delicioso de chocolate", img: "/assets/categorias/bolo_chocolate.jpg" },
-                { nome: "Bolo de Doce de Leite", descricao: "Bolo cremoso de doce de leite", img: "/assets/categorias/bolo_doce_de_leite.jpg" },
-                { nome: "Bolo de Baunilha", descricao: "Bolo simples de baunilha", img: "/assets/categorias/bolo_baunilha.jpg" },
-                { nome: "Bolo de Coco", descricao: "Bolo suave de coco", img: "/assets/categorias/bolo_coco.jpg" },
-                { nome: "Bolo de Limão", descricao: "Bolo refrescante de limão", img: "/assets/categorias/bolo_limao.jpg" },
-                { nome: "Bolo de Red Velvet", descricao: "Bolo de Red Velvet com cream cheese", img: "/assets/categorias/bolo_redvelvet.jpg" },
+                { nome: "Bolo de Chocolate", descricao: "Bolo delicioso de chocolate", img: "../static/assets/categorias/bolo_chocolate.jpg" },
+                { nome: "Bolo de Doce de Leite", descricao: "Bolo cremoso de doce de leite", img: "../static/assets/categorias/bolo_doce_de_leite.jpg" },
+                { nome: "Bolo de Baunilha", descricao: "Bolo simples de baunilha", img: "../static/assets/categorias/bolo_baunilha.jpg" },
+                { nome: "Bolo de Coco", descricao: "Bolo suave de coco", img: "../static/assets/categorias/bolo_coco.jpg" },
+                { nome: "Bolo de Limão", descricao: "Bolo refrescante de limão", img: "../static/assets/categorias/bolo_limao.jpg" },
+                { nome: "Bolo de Red Velvet", descricao: "Bolo de Red Velvet com cream cheese", img: "../static/assets/categorias/bolo_redvelvet.jpg" },
                 
             ],
             donuts: [
-                { nome: "Donut de Chocolate", descricao: "Donut coberto com ganache de chocolate", img: "/assets/categorias/donut_chocolate.jpg" },
-                { nome: "Donut de Baunilha", descricao: "Donut com cobertura de baunilha", img: "/assets/categorias/donut_baunilha.jpg" },
-                { nome: "Donut de morango", descricao: "Donut de morango com cream cheese", img: "/assets/categorias/donut_morango.jpg" },
+                { nome: "Donut de Chocolate", descricao: "Donut coberto com ganache de chocolate", img: "../static/assets/categorias/donut_chocolate.jpg" },
+                { nome: "Donut de Baunilha", descricao: "Donut com cobertura de baunilha", img: "../static/assets/categorias/donut_baunilha.jpg" },
+                { nome: "Donut de morango", descricao: "Donut de morango com cream cheese", img: "../static/assets/categorias/donut_morango.jpg" },
             ],
             cupcake: [
-                { nome: "Cup Cake de Chocolate com Ganache", descricao: "Cupcake de chocolate com ganache", img: "/assets/categorias/cupcake_chocolate.jpg" },
-                { nome: "Cup Cake de Baunilha com Buttercream", descricao: "Cupcake de baunilha com buttercream", img: "/assets/categorias/cupcake_baunilha.jpg" },
-                { nome: "Cup Cake de Red Velvet", descricao: "Cupcake de morango com cobertura de cream cheese", img: "/assets/categorias/cupcake_morango.jpg" },
+                { nome: "Cup Cake de Chocolate com Ganache", descricao: "Cupcake de chocolate com ganache", img: "../static/assets/categorias/cupcake_chocolate.jpg" },
+                { nome: "Cup Cake de Baunilha com Buttercream", descricao: "Cupcake de baunilha com buttercream", img: "../static/assets/categorias/cupcake_baunilha.jpg" },
+                { nome: "Cup Cake de Red Velvet", descricao: "Cupcake de morango com cobertura de cream cheese", img: "../static/assets/categorias/cupcake_morango.jpg" },
             ],
             barra: [
-                { nome: "Chocolate", descricao: "Chocolate amargo", img: "/assets/categorias/barra_chocolate.jpg" },
-                { nome: "Chocolate Branco", descricao: "Barra de chocolate branco", img: "/assets/categorias/barra_chocolate_branco.jpg" },
-                { nome: "Pistache", descricao: "Chocolate com pistache", img: "/assets/categorias/barra_chocolate_pistache.jpg" },
+                { nome: "Chocolate", descricao: "Chocolate amargo", img: "../static/assets/categorias/barra_chocolate.jpg" },
+                { nome: "Chocolate Branco", descricao: "Barra de chocolate branco", img: "../static/assets/categorias/barra_chocolate_branco.jpg" },
+                { nome: "Pistache", descricao: "Chocolate com pistache", img: "../static/assets/categorias/barra_chocolate_pistache.jpg" },
             ]
         };
 
@@ -127,7 +123,7 @@
 
             let produtosParaMostrar = [];
 
-            if (sabor) {
+            if (sabor && sabor !== 'todos') {
                 produtosParaMostrar = produtos[sabor] || [];
             } else {
                 for (const key in produtos) {
@@ -156,6 +152,7 @@
         document.getElementById('donuts').addEventListener('click', () => exibirProdutos('donuts'));
         document.getElementById('cupcake').addEventListener('click', () => exibirProdutos('cupcake'));
         document.getElementById('barra').addEventListener('click', () => exibirProdutos('barra'));
+        document.getElementById('todos').addEventListener('click', () => exibirProdutos('todos'));
 
         // Filtro de pesquisa
         document.getElementById('pesquisa').addEventListener('input', function() {
