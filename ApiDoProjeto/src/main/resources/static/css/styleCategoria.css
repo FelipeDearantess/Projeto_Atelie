@@ -5,7 +5,10 @@ body {
     color: #333;
 }
 
-
+.a{
+    color: inherit;
+    text-decoration: nome;
+}
 .btn-pink {
     background-color: #ff1493;
     color: #fff;
